@@ -1,34 +1,26 @@
-
-Source installation information for modders
+解释：Hanmin
+为EDGE Mod 开发人员配置开发环境所写
 -------------------------------------------
 This code follows the Minecraft Forge installation methodology. It will apply
 some small patches to the vanilla MCP source code, giving you and it access 
 to some of the data and functions you need to build a successful mod.
-
-Note also that the patches are built against "un-renamed" MCP source code (aka
-SRG Names) - this means that you will not be able to read them directly against
-normal code.
+此代码为Minecraft Forge，会为您成功开发mod提供支持。
+注意：此代码已实现一个TestMod，请确认能成功编译后再进行branch out/commit/push。
 
 Setup Process:
+安装过程：
 ==============================
 
-Step 1: Open your command-line and browse to the folder where you extracted the zip file.
-
-Step 2: You're left with a choice.
-If you prefer to use Eclipse:
-1. Run the following command: `gradlew genEclipseRuns` (`./gradlew genEclipseRuns` if you are on Mac/Linux)
-2. Open Eclipse, Import > Existing Gradle Project > Select Folder 
+第一步：使用git clone main branch。推荐在IDE中clone，为管理branch提供便利。有经验者可使用cmd/terminal/shell
+file -> import -> git -> 'Projects from git' -> 'Clone URL' -> clone https://github.com/dlharry/TestMod.git。
+第二步： 设置gradle
+Run the following command: `gradlew genEclipseRuns` (`./gradlew genEclipseRuns` if you are on Mac/Linux)
+运行以下指令： `gradlew genEclipseRuns` (若您为Mac/Linux用户 `./gradlew genEclipseRuns`)
+Open Eclipse, Import > Existing Gradle Project > Select Folder 
    or run `gradlew eclipse` to generate the project.
+第三步：
+若遇到库缺失或其他问题，尝试`gradlew --refresh-dependencies` `gradlew clean`并重复第二步
 
-If you prefer to use IntelliJ:
-1. Open IDEA, and import project.
-2. Select your build.gradle file and have it import.
-3. Run the following command: `gradlew genIntellijRuns` (`./gradlew genIntellijRuns` if you are on Mac/Linux)
-4. Refresh the Gradle Project in IDEA if required.
-
-If at any point you are missing libraries in your IDE, or you've run into problems you can 
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
 
 Mapping Names:
 =============================
